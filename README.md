@@ -1,8 +1,8 @@
 # Anura
 
-Welcome to Anura! 
+Welcome to Anura! 🥳
 
-Do you ever feel like you would like to workout, but lack the time, the energy, or the will to find the right exercise? 
+Do you ever feel like you would like to workout, but lack the time, the energy, or the will to find the right exercise? 🥲
 
 With Anura Home Workouts the problem is gone! 🤩
 
