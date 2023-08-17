@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './style/App.css';
+import Searchbar from './searchbar';
+import { useState } from 'react';
+import { fetchMuscleFromAPI } from './api';
+import { Exercise } from './types';
+import Exercises from './Exercises';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [muscle, setMuscle] = useState('');
+  const [exercises, setExercise] = useState<Exercise[]>([]);
+
+  const handleSubmit = async (muscle: string) => {
+    const responseData = await fetchMuscleFromAPI(muscle);
+
+    setExercise(responseData);
+    console.log(
+      'response from fetchthingie in handlesubmit',
+      responseData[0].difficulty
+    );
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Searchbar onSubmit={handleSubmit} />
+      <Exercises exercises={exercises} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
