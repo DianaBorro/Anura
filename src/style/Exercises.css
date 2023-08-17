@@ -36,3 +36,9 @@
     gap: 10px;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .exercise__instructions {
+    background-color: #242424;
+
+  }
+}

@@ -21,6 +21,16 @@ function App() {
 
   return (
     <>
+      {/* <header>
+        <ul className="nav-bar__list">
+          <li className="nav-bar__list__item">
+            <a href="/">Home</a>
+          </li>
+          <li className="nav-bar__list__item">
+            <a href="https://github.com/DianaBorro">GitHub</a>
+          </li>
+        </ul>
+      </header> */}
       <Searchbar onSubmit={handleSubmit} />
       <Exercises exercises={exercises} />
     </>
