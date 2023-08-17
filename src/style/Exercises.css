@@ -5,7 +5,13 @@
 }
 
 .exercise {
-
-
   border: 1px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+  .exercises {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
 }
