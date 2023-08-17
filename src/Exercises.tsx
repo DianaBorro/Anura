@@ -1,5 +1,6 @@
 import { Exercise } from './types';
 import './style/Exercises.css';
+import Popup from 'reactjs-popup';
 
 type ExercisePromtps = {
   exercises: Exercise[];
@@ -31,9 +32,15 @@ const Exercises = (exercises: ExercisePromtps) => {
                 <div className="exercise__equipment">
                   <b>Equipment:</b> {exercise.equipment}
                 </div>
-                <div className="exercise__instructions">
-                  <b>Instructions:</b> {exercise.instructions}
-                </div>
+                <Popup
+                  trigger={<button> See instructions </button>}
+                  closeOnDocumentClick
+                >
+                  <div className="exercise__instructions">
+                    <h4>{exercise.name} Instructions:</h4>
+                    <p>{exercise.instructions}</p>
+                  </div>
+                </Popup>
               </div>
             </>
           );
